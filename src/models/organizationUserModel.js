@@ -10,7 +10,7 @@ const organizationUserSchema = mongoose.Schema({
         type: String,
         require: true
     },
-    UserEmai: {
+    UserEmail: {
         type: String,
         require: true,
         unique: true
