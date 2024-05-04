@@ -26,11 +26,6 @@ const viewOrganizations = asyncHandler(async(req,res) => {
     const organizations = await Organization.find({})
     res.status(200).json({ data: organizations, status: 200, message: 'Organizations retrieved successfully' });
 })
-const viewOrganizationsUsers = asyncHandler(async(req,res) => {
-    const organizationUserID = req.params.id
-    const organizations = await OrganizationUser.find({OrganizationID : organizationUserID})
-    res.status(200).json({ data: organizations, status: 200, message: 'Organizations Users retrieved successfully' });
-})
 
 const loginOrganization = asyncHandler(async(req,res) => {
     const reqBody = req.body
@@ -51,4 +46,4 @@ const loginOrganization = asyncHandler(async(req,res) => {
     }
 })
 
-module.exports = {createOrganization, viewOrganizations, loginOrganization, viewOrganizationsUsers}
+module.exports = {createOrganization, viewOrganizations, loginOrganization}
